@@ -1,0 +1,10 @@
+# --- Inner DinoGame folder (anchored to repo root) ---
+/DinoGame/
+
+# --- Assembler / debugger tools ---
+/AFD.EXE
+/nasm.exe
+
+# --- DOSBox shortcut (Windows shortcuts are .lnk files) ---
+/DOSBox.exe - Shortcut.lnk
+*.lnk
