@@ -1,5 +1,59 @@
+;Start Code from here  No newline at end of file
 [org 0x100]
+jmp start
+dino:
+mov word [es:1780], 0x3DDC
+mov word [es:1782], 0x5DDC
+mov word [es:1784], 0x5FDC
+mov word [es:1786], 0x5DDC
+mov word [es:1788], 0x5DDC
+mov word [es:1790], 0x3DDC
+mov word [es:1792], 0x3DDC
 
+mov word [es:1940], 0x3DDB
+mov word [es:1942], 0x3DDB
+mov word [es:1944], 0x3DDB
+mov word [es:1946], 0x3DDB
+mov word [es:1948], 0x3DDF
+mov word [es:1950], 0x3DDF
+mov word [es:1952], 0x3DDF
+
+mov word [es:2090], 0x3DDC
+mov word [es:2098], 0x3DDC
+mov word [es:2100], 0x3DDB
+mov word [es:2102], 0x3DDB
+mov word [es:2104], 0x3DDB
+mov word [es:2106], 0x3DDF
+mov word [es:2108], 0x3DDF
+mov word [es:2110], 0x3DDF
+
+mov word [es:2250], 0x3DDB
+mov word [es:2252], 0x3DDC
+mov word [es:2254], 0x3DDC
+mov word [es:2256], 0x3DDB
+mov word [es:2258], 0x3DDB
+mov word [es:2260], 0x3DDB
+mov word [es:2262], 0x5DDF
+mov word [es:2264], 0x3DDB
+mov word [es:2266], 0x3DDF
+mov word [es:2268], 0x3DDB
+
+mov word [es:2412], 0x3DDF
+mov word [es:2414], 0x5DDF
+mov word [es:2416], 0x3DDB
+mov word [es:2418], 0x3DDB
+mov word [es:2420], 0x5DDF
+mov word [es:2422], 0x32DB
+mov word [es:2424], 0x5DDC
+mov word [es:2426], 0x3DDF
+
+mov word [es:2574], 0x3DDB
+mov word [es:2576], 0x3DDC
+mov word [es:2580], 0x3DDB
+mov word [es:2582], 0x3DDC
+
+RET
+dinofloor:
 mov ax, 0xb800
 mov es, ax
 mov di,0
@@ -130,8 +184,11 @@ space5.3:
 mov word [es: di], 0x4020
 add di, 4
 loop space5.3
-
+RET
+start:
+call dinofloor
+call dino
  mov ax, 0x4C00
     int 0x21
 
-
+ 
