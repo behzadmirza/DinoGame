@@ -1,4 +1,3 @@
-;Start Code from here  No newline at end of file
 [org 0x100]
 jmp start
 dino:
@@ -33,18 +32,18 @@ mov word [es:2254], 0x3DDC
 mov word [es:2256], 0x3DDB
 mov word [es:2258], 0x3DDB
 mov word [es:2260], 0x3DDB
-mov word [es:2262], 0x5DDF
+mov word [es:2262], 0x3DDB
 mov word [es:2264], 0x3DDB
-mov word [es:2266], 0x3DDF
-mov word [es:2268], 0x3DDB
+mov word [es:2266], 0x3DDC
+mov word [es:2268], 0x3DDC
 
 mov word [es:2412], 0x3DDF
-mov word [es:2414], 0x5DDF
+mov word [es:2414], 0x3DDB
 mov word [es:2416], 0x3DDB
 mov word [es:2418], 0x3DDB
-mov word [es:2420], 0x5DDF
-mov word [es:2422], 0x32DB
-mov word [es:2424], 0x5DDC
+mov word [es:2420], 0x3DDB
+mov word [es:2422], 0x3DDB
+mov word [es:2424], 0x3DDF
 mov word [es:2426], 0x3DDF
 
 mov word [es:2574], 0x3DDB
@@ -185,10 +184,52 @@ mov word [es: di], 0x4020
 add di, 4
 loop space5.3
 RET
+smallcloud:
+mov word [es:di+4], 0x3FDC
+mov word [es:di+6], 0x3FDC
+
+mov word [es:di+160], 0x3FDC
+mov word [es:di+162], 0x3FDB
+mov word [es:di+164], 0x3FDB
+mov word [es:di+166], 0x3FDB
+mov word [es:di+168], 0x3FDB
+mov word [es:di+170], 0x3FDC
+RET
+bigcloud:
+mov word [es:di+8], 0x3FDC
+mov word [es:di+10], 0x3FDC
+mov word [es:di+12], 0x3FDC
+
+mov word [es:di+162], 0x3FDC
+mov word [es:di+164], 0x3FDC
+mov word [es:di+166], 0x3FDB
+mov word [es:di+168], 0x3FDB
+mov word [es:di+170], 0x3FDB
+mov word [es:di+172], 0x3FDB
+mov word [es:di+174], 0x3FDB
+mov word [es:di+176], 0x3FDC
+mov word [es:di+178], 0x3FDC
+
+mov word [es:di+320], 0x3FDC
+mov word [es:di+322], 0x3FDB
+mov word [es:di+324], 0x3FDB
+mov word [es:di+326], 0x3FDB
+mov word [es:di+328], 0x3FDB
+mov word [es:di+330], 0x3FDB
+mov word [es:di+332], 0x3FDB
+mov word [es:di+334], 0x3FDB
+mov word [es:di+336], 0x3FDB
+mov word [es:di+338], 0x3FDB
+mov word [es:di+340], 0x3FDC
+RET
 start:
 call dinofloor
 call dino
+mov di, 360
+call bigcloud
+mov di, 900
+call smallcloud
+mov di, 276
+call bigcloud
  mov ax, 0x4C00
     int 0x21
-
- 
